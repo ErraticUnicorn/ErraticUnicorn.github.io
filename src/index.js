@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import HexagonColumn from './hexagonColumn'
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 
 import Background from './images/background.jpg';
 
@@ -29,25 +30,32 @@ var hexagonContainerEvenStyle = {
 class Section extends React.Component {
   render() {
     return (
-      <section style={ sectionStyle }>
-        <div section id='hexagon-container' style = { hexagonContainerStyle }>
-          <HexagonColumn value={1}/>
-          <HexagonColumn value={2}/>
-          <HexagonColumn value={3}/>
-          <HexagonColumn value={4}/>
-          <HexagonColumn value={5}/>
-          <HexagonColumn value={0}/>
-          <HexagonColumn value={7}/>
-          <HexagonColumn value={8}/>
-          <HexagonColumn value={9}/>
+      <Router>
+      <div>
+          <Link to={`/App`}>
+            Link
+          </Link>
+          <Route path="/App" component={App}/>
+          <Route exact={true} path="/" render ={() => (
+            <section style={ sectionStyle }>
+              <div section id='hexagon-container' style = { hexagonContainerStyle }>
+                <HexagonColumn value={1}/>
+                <HexagonColumn value={2}/>
+                <HexagonColumn value={3}/>
+                <HexagonColumn value={4}/>
+                <HexagonColumn value={5}/>
+                <HexagonColumn value={0}/>
+                <HexagonColumn value={7}/>
+                <HexagonColumn value={8}/>
+                <HexagonColumn value={9}/>
+              </div>
+            </section>
+          )}/>
         </div>
-      </section>
+      </Router>
     );
   }
 }
 
-// let indexTarget = {
-//   getPageNode: function () {ReactDOM.render(<Section />, document.getElementById('root'))},
-// }
 ReactDOM.render(<Section />, document.getElementById('root'))
 registerServiceWorker();

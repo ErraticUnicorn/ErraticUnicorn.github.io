@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import HexagonColumn from './hexagon-column'
+import HexagonColumn from './hexagonColumn'
 
 import Background from './images/background.jpg';
 
@@ -15,7 +15,8 @@ var sectionStyle = {
 }
 
 var hexagonContainerStyle = {
-  width: "auto",
+  width: "125%",
+  height: "auto",
   display: "flex"
 }
 
@@ -30,13 +31,23 @@ class Section extends React.Component {
     return (
       <section style={ sectionStyle }>
         <div section id='hexagon-container' style = { hexagonContainerStyle }>
-          <HexagonColumn/>
-          <HexagonColumn/>
+          <HexagonColumn value={1}/>
+          <HexagonColumn value={2}/>
+          <HexagonColumn value={3}/>
+          <HexagonColumn value={4}/>
+          <HexagonColumn value={5}/>
+          <HexagonColumn value={0}/>
+          <HexagonColumn value={7}/>
+          <HexagonColumn value={8}/>
+          <HexagonColumn value={9}/>
         </div>
       </section>
     );
   }
 }
 
-ReactDOM.render(<Section />, document.getElementById('root'));
+// let indexTarget = {
+//   getPageNode: function () {ReactDOM.render(<Section />, document.getElementById('root'))},
+// }
+ReactDOM.render(<Section />, document.getElementById('root'))
 registerServiceWorker();

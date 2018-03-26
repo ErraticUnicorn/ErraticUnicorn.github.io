@@ -10,7 +10,7 @@ var hexagonStyle = {
 export default class Hexagon extends React.Component {
   render() {
     return (
-      <ReactHexagon style={ hexagonStyle } viewBox = {"0 1 500 511"}/>
+      <ReactHexagon style={ hexagonStyle }/>
     );
   }
 }

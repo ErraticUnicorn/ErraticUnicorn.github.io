@@ -4,7 +4,7 @@ import Hexagon from './hexagon';
 import HexagonButton from './hexagonButton';
 
 var width = "20%"
-var marginLeft = "-87px"
+var marginLeft = "-85px"
 var hexagonColumnOdd = {
   width: width,
   height: "100vh",
@@ -15,7 +15,7 @@ var hexagonColumnEven = {
   width: width,
   height: "100vh",
   marginLeft: marginLeft,
-  marginTop: "-132px"
+  marginTop: "-125px"
 }
 
 export default class HexagonColumn extends React.Component {

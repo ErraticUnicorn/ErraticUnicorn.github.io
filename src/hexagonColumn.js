@@ -25,7 +25,6 @@ export default class HexagonColumn extends React.Component {
   }
   onChildChanged(newState) {
     this.setState({ disappear: newState })
-    console.log("Hi")
     ReactDOM.findDOMNode(this).classList.add("hidden");
   }
 

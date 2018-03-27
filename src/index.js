@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import HexagonColumn from './hexagonColumn'
+import DavidSection from './david'
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 
 import Background from './images/background.jpg';
@@ -32,10 +33,10 @@ class Section extends React.Component {
     return (
       <Router>
       <div>
-          <Link to={`/App`}>
+          <Link to={`/David`}>
             Link
           </Link>
-          <Route path="/App" component={App}/>
+          <Route path="/david" component={DavidSection}/>
           <Route exact={true} path="/" render ={() => (
             <section style={ sectionStyle }>
               <div section id='hexagon-container' style = { hexagonContainerStyle }>

@@ -5,6 +5,7 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import HexagonColumn from './hexagonColumn'
 import DavidSection from './david'
+import HomeSection from './home'
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 
 import Background from './images/background.jpg';
@@ -36,6 +37,7 @@ class Section extends React.Component {
           <Link to={`/David`}>
             Link
           </Link>
+          <Route path="/home" component={HomeSection}/>
           <Route path="/david" component={DavidSection}/>
           <Route exact={true} path="/" render ={() => (
             <section style={ sectionStyle }>

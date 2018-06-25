@@ -34,7 +34,8 @@ var subheaderStyle = {
 var buttonContainerStyle = {
   paddingTop: '100px',
   display: 'flex',
-  justifyContent: 'space-evenly'
+  justifyContent: 'space-evenly',
+  flexWrap: 'wrap'
 }
 
 var projectsButtonStyle = {

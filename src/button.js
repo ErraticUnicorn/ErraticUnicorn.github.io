@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 
 var employmentButtonStyle = {
+  marginTop: "10px",
   backgroundColor: "black",
   borderStyle: "solid",
   borderColor: "#E9287A",
@@ -26,6 +27,7 @@ var hover = {
 
 
 var projectsButtonStyle = {
+    marginTop: "10px",
     backgroundColor: "black",
     borderStyle: "solid",
     borderColor: "white",

@@ -22,6 +22,16 @@
   font-size: large;
 }
 
+@font-face {
+  font-family: 'MinionPro';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local('MinionPro-Regular'),
+    local('MinionPro-Regular'),
+    url(./fonts/MinionPro-Regular.otf) format('opentype'),
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

@@ -35,7 +35,10 @@ class Section extends React.Component {
       <Router>
       <div>
           <Link to={`/David`}>
-            Link
+            Test1
+          </Link>
+          <Link to={`/Home`}>
+            Test2
           </Link>
           <Route path="/home" component={HomeSection}/>
           <Route path="/david" component={DavidSection}/>

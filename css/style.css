@@ -48,7 +48,6 @@ a {
     margin-top: -20px;
     margin-left: 5px;
     opacity: 0;
-    z-index: -1;
     border-radius: 2px;
 }
 
@@ -68,4 +67,4 @@ a {
     background-color: black;
 }
 
-a:hover > .underline { opacity: 1 }
+a:hover > .underline { opacity: .9 }

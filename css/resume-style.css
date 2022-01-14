@@ -10,7 +10,7 @@
 
 .cymk {
     height: 1050pt;
-    width: 10%;
+    width: 20%;
     margin-top: 10pt;
 }
 
@@ -33,7 +33,7 @@
 h2 {
     font-family: Din-Bold;
     font-size: 22pt;
-    margin-top: -10px;
+    margin-top: -8px;
     margin-left: 10px;
 }
 
@@ -62,4 +62,51 @@ h4 {
 
 #resume-body {
     margin-right: 25%;
+}
+
+li, ul {
+    margin: 0;
+}
+
+li > h4 {
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+
+li > h3 {
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.no-bottom-margin {
+    margin-bottom: 0px;
+}
+
+.float-right {
+    float: right;
+}
+
+#employment {
+    margin-top: 14px;
+}
+
+.no-margin {
+    margin: 0px;
+}
+
+.bold {
+    font-family: Din-Bold;
+}
+
+#personal-projects {
+    margin-top: 35px;
+}
+
+#skills {
+    margin-top: 10px;
 }

@@ -45,10 +45,14 @@ a {
     width: 100%;
     height: 10pt;
     padding-top: 10px;
-    margin-top: -20px;
-    margin-left: 5px;
+    margin-top: -25px;
+    margin-left: 3px;
     opacity: 0;
     border-radius: 2px;
+    border-radius: 0.8em 0.3em;
+    background: transparent;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
 }
 
 .yellow {
@@ -56,11 +60,22 @@ a {
 }
 
 .cyan {
+    background-image: linear-gradient(
+        to right,
+        rgba(255, 225, 0, 0.1),
+        cyan 4%,
+        rgba(0, 238, 255, 0.829)
+      );
     background-color: cyan;
 }
 
 .magenta {
-    background-color: magenta;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 225, 0, 0.1),
+      magenta 4%,
+      rgba(255, 0, 212, 0.76)
+    );
 }
 
 .black {

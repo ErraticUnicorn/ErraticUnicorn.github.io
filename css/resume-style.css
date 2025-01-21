@@ -8,12 +8,6 @@
     src: url(fonts/din_2014_bold.ttf);
 }
 
-.cymk {
-    height: 1050pt;
-    width: 20%;
-    margin-top: 10pt;
-}
-
 .david-title {
     height: 100pt;
     width: 75%;
@@ -110,3 +104,24 @@ li > h3 {
 #skills {
     margin-top: 10px;
 }
+
+.dynamic-bars {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.path-section {
+    transition: all 0.3s ease;
+    fill: none;
+    stroke-width: 30;
+}
+
+/* CMYK Colors */
+.cyan { stroke: #00ffff; }
+.magenta { stroke: #ff00ff; }
+.yellow { stroke: #ffff00; }
+.key { stroke: #000000; }

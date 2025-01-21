@@ -9,7 +9,12 @@
     </head>
     <body style="margin: 0px;">
         <div id="resume" style="display: flex;">
-            <img src="css/images/CMYK.png" alt="banner" class="cymk">
+            <svg class="dynamic-bars">
+                <path class="path-section cyan" id="cyan-path" />
+                <path class="path-section magenta" id="magenta-path" />
+                <path class="path-section yellow" id="yellow-path" />
+                <path class="path-section key" id="key-path" />
+            </svg>
             <div id="resume-contents">
                 <img src="css/images/david_wert.png" alt="David Wert" class="david-title">
                 <div id="resume-body">
@@ -139,5 +144,50 @@
                 </div>
             </div>
         </div>
+        <script>
+document.addEventListener('DOMContentLoaded', function() {
+                const sections = ['education', 'employment', 'personal-projects', 'skills'];
+                const title = document.querySelector('.david-title');
+                const svgContainer = document.querySelector('.dynamic-bars');
+                
+                function updatePaths() {
+                    const titleRect = title.getBoundingClientRect();
+                    const startY = titleRect.bottom;
+                    const startX = svgContainer.clientWidth;
+                    
+                    sections.forEach((sectionId, index) => {
+                        const section = document.getElementById(sectionId);
+                        if (!section) return;
+                        
+                        const sectionRect = section.getBoundingClientRect();
+                        const endY = sectionRect.top;
+                        
+                        // Calculate control points for the curve
+                        const controlX1 = startX * 0.8;
+                        const controlY1 = startY + (endY - startY) * 0.2;
+                        const controlX2 = startX * 0.2;
+                        const controlY2 = startY + (endY - startY) * 0.8;
+                        
+                        // Create the curved path
+                        const path = `
+                            M ${startX} ${startY}
+                            C ${controlX1} ${controlY1},
+                              ${controlX2} ${controlY2},
+                              ${startX} ${endY}
+                        `;
+                        
+                        // Update the corresponding path
+                        const pathElement = document.getElementById(`${['cyan', 'magenta', 'yellow', 'key'][index]}-path`);
+                        pathElement.setAttribute('d', path);
+                    });
+                }
+                
+                window.addEventListener('scroll', updatePaths);
+                window.addEventListener('resize', updatePaths);
+                
+                // Initial update
+                updatePaths();
+            });
+        </script>
     </body>    
 </html>

@@ -84,28 +84,4 @@ a {
 
 a:hover > .underline { opacity: .9 }
 
-.footer {
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
-    font-family: Din;
-    font-size: 14pt;
-    color: #333;
-    border-top: 1px solid #eee;
-}
 
-.footer::before {
-    content: "";
-    display: block;
-    width: 100px;
-    height: 4px;
-    margin: 0 auto 15px;
-    background-image: linear-gradient(
-        to right,
-        cyan,
-        magenta,
-        yellow,
-        black
-    );
-    border-radius: 2px;
-}

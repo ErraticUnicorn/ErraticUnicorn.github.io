@@ -151,6 +151,79 @@
                 background-image: none;
             }
         }
+
+        /* Enhanced print-specific styles */
+        @media print {
+            @page {
+                margin: 0.5cm;
+                size: 8.5in 11in portrait; /* Standard US letter size */
+            }
+            
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            
+            .press-kit-container {
+                padding: 0.5cm;
+                max-width: none;
+            }
+            
+            h1 {
+                font-size: 28px;
+                margin-bottom: 2px;
+            }
+            
+            h2 {
+                font-size: 18px;
+                margin-top: 2px;
+                margin-bottom: 15px;
+            }
+            
+            .press-banner {
+                height: 180px;
+                object-fit: cover;
+                margin-bottom: 15px;
+            }
+            
+            .tagline {
+                font-size: 14px;
+                margin-bottom: 15px;
+            }
+            
+            .section {
+                margin-bottom: 15px;
+                page-break-inside: avoid;
+            }
+            
+            .section h2 {
+                font-size: 16px;
+                margin-bottom: 8px;
+            }
+            
+            .steam-key {
+                padding: 10px;
+                margin: 10px 0;
+            }
+            
+            .avatar {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .contact-info p {
+                margin: 0;
+                line-height: 1.3;
+            }
+            
+            .links a {
+                margin-bottom: 4px;
+            }
+            
+            .italics {
+                font-size: 11px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -178,13 +251,12 @@
             <div class="steam-key">
                 [UNIQUE_KEY_HERE]
             </div>
-            <p class="italics">*Replace with the unique Steam key for each press/streamer contact*</p>
         </div>
         
         <div class="section">
             <h2 class="yellow-border">Additional Press Materials</h2>
             <p>For high-resolution screenshots, logos, and additional information, please access our complete press kit:</p>
-            <p><a href="#" target="_blank">[Complete Press Kit Link]</a></p>
+            <p><a href="https://drive.google.com/drive/u/1/folders/1MXqx8X1C3yQDTTw4bbZhMG0rH0TxEUko" target="_blank">[Complete Press Kit Link]</a></p>
         </div>
         
         <div class="section">

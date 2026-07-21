@@ -13,6 +13,9 @@
             <div id="resume-contents">
                 <img src="css/images/david_wert.png" alt="David Wert" class="david-title">
                 <div id="resume-body">
+                    <!-- Region heights (resume-style.css) are tuned so each section
+                         boundary lands on a colour transition in CMYK.png. -->
+                    <div class="region region-edu">
                     <div id="contact">
                         <div>
                             <h3 style="display: inline;">Email:</h3>
@@ -42,11 +45,24 @@
                             </ul>
                         </ul>
                     </div>
+                    </div>
+                    <div class="region region-emp">
                     <div id="employment">
                         <h2 class="no-bottom-margin">EMPLOYMENT</h2>
                         <ul>
                             <li>
-                                <h3 class="inline"><a href="https://turnip.games/">Turnip Games - Founder, Programmer, Game Designer, Writer</a></h3> <h4 class="float-right inline"> 2023-2025 </h4>
+                                <h3 class="inline"><a href="https://guild.com/">Guild Education - Sr. Software Engineer II</a></h3> <h4 class="float-right inline"> 2025- </h4>
+                                <div>
+                                    <h4 class="no-margin">
+                                        Led the Foundations team through a large-scale program refactor with zero downtime, leveraging a projection-based architecture for incredibly fast reads and real-time diffing for a smooth transition. Established organization-wide eventing best practices, introducing idempotency keys and the outbox pattern.
+                                        <em>Reference: William Thomas william.thomas@guildeducation.com</em>
+                                    </h4>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <h3 class="inline"><a href="https://turnip.games/">Turnip Games - Founder, Lead Programmer, Lead Game Designer, Lead Writer</a></h3> <h4 class="float-right inline"> 2023- </h4>
                                 <div>
                                     <h4 class="no-margin">
                                         Launched Turnip Games to create Sunset High, a narrative driven noir set in high school. Managed the project from design docs to completion. Technically, the focus was on snapshot retention of all user actions in order to allow the player to rewind as well as creating a new module in engine to dynamically create directed acyclic graphs for quest design. Alongside this, managed a team of two, and shipped the product from nascence to launch. 
@@ -90,6 +106,8 @@
                             </li>
                         </ul>
                     </div>
+                    </div>
+                    <div class="region region-tail">
                     <div id="personal-projects">
                         <h2 class="no-bottom-margin">PERSONAL PROJECTS</h2>
                         <ul>
@@ -135,6 +153,7 @@
                                 </h4>
                             </div>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>

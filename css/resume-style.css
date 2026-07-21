@@ -8,10 +8,44 @@
     src: url(fonts/din_2014_bold.ttf);
 }
 
+/* ── CMYK spine alignment — TWEAK THESE ────────────────────────────────
+   Each value is how tall a section block is, so its bottom edge lines up
+   with the matching colour transition in CMYK.png.
+     • Increase a value  → that section ends LOWER on the page.
+     • Decrease a value  → that section ends HIGHER on the page.
+   (A block only grows beyond its value if its text is too long to fit —
+   in that case trim the text or raise the value.) */
+:root {
+    --edu-height: 268px;   /* EDUCATION block height → its bottom hits the YELLOW line   */
+    --emp-height: 804px;   /* EMPLOYMENT band height (YELLOW → MAGENTA line)             */
+    --emp-font:   16pt;    /* EMPLOYMENT text size — LOWER this to shrink Employment so   */
+                           /*   its text fits inside --emp-height and ends at MAGENTA.    */
+                           /*   (Height vars only ADD space; they can't shrink text.)     */
+    --tail-height: 220px;  /* PERSONAL PROJECTS + SKILLS → bottom (MAGENTA → CYAN) band   */
+}
+
 .cymk {
     height: 1050pt;
     width: 20%;
     margin-top: 10pt;
+}
+
+.region-edu {
+    min-height: var(--edu-height);
+}
+
+.region-emp {
+    min-height: var(--emp-height);
+}
+
+.region-tail {
+    min-height: var(--tail-height);
+}
+
+/* Employment text size — drop --emp-font to compress Employment into its band. */
+#employment h3,
+#employment h4 {
+    font-size: var(--emp-font);
 }
 
 .david-title {

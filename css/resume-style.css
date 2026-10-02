@@ -30,10 +30,6 @@
     margin-top: 10pt;
 }
 
-.region-edu {
-    min-height: var(--edu-height);
-}
-
 .region-emp {
     min-height: var(--emp-height);
 }

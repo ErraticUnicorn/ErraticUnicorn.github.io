@@ -8,45 +8,103 @@
     src: url(fonts/din_2014_bold.ttf);
 }
 
-/* ── CMYK spine alignment — TWEAK THESE ────────────────────────────────
-   Each value is how tall a section block is, so its bottom edge lines up
-   with the matching colour transition in CMYK.png.
-     • Increase a value  → that section ends LOWER on the page.
-     • Decrease a value  → that section ends HIGHER on the page.
-   (A block only grows beyond its value if its text is too long to fit —
-   in that case trim the text or raise the value.) */
+/* ── CMYK arcs ─────────────────────────────────────────────────────────
+   The four arcs are drawn in CSS (.cmyk-arc in resume.html) and each one
+   is anchored to the section heading it ends at, so they stay lined up
+   however the text changes. */
 :root {
-    --edu-height: 268px;   /* EDUCATION block height → its bottom hits the YELLOW line   */
-    --emp-height: 804px;   /* EMPLOYMENT band height (YELLOW → MAGENTA line)             */
-    --emp-font:   16pt;    /* EMPLOYMENT text size — LOWER this to shrink Employment so   */
-                           /*   its text fits inside --emp-height and ends at MAGENTA.    */
-                           /*   (Height vars only ADD space; they can't shrink text.)     */
-    --tail-height: 220px;  /* PERSONAL PROJECTS + SKILLS → bottom (MAGENTA → CYAN) band   */
+    --arc: 1.55vw;         /* thickness of each arc                  */
+    --arc-end: 7.7vw;      /* where the arcs meet the section titles */
+    --arc-left: 0px;       /* left edge of the outer (cyan) arc      */
+    --arc-top: 13px;       /* top of the outer (cyan) arc            */
+    --arc-raise: 5px;      /* raise arc ends to centre on headings   */
 }
 
+#resume {
+    position: relative;
+    padding-left: calc(var(--arc-end) + 2px);
+}
+
+#resume-contents {
+    flex: 1;
+}
+
+/* Each arc ends at the section heading anchored below. */
+#education h2 { anchor-name: --edu; }
+#employment h2 { anchor-name: --emp; }
+#personal-projects h2 { anchor-name: --proj; }
+#skills h2 { anchor-name: --skills; }
+
+/* Each inner arc reaches --ov under the arc outside it, so no hairline of
+   white shows between neighbouring colours. */
+.cmyk-arc {
+    --ov: 1.5px;
+    --w: calc(var(--arc-end) - var(--arc-left) - var(--i) * var(--arc) + var(--ov));
+    position: absolute;
+    box-sizing: border-box;
+    border: var(--arc) solid;
+    border-right: none;
+    border-left-width: calc(var(--arc) + var(--ov));
+    border-top-width: calc(var(--arc) + var(--ov));
+    left: calc(var(--arc-left) + var(--i) * var(--arc) - var(--ov));
+    top: calc(var(--arc-top) + var(--i) * var(--arc) - var(--ov));
+    width: var(--w);
+    border-radius: var(--w) 0 0 var(--w);
+}
+
+.arc-cyan {
+    --ov: 0px;
+}
+
+.arc-cyan {
+    --i: 0;
+    border-color: #00aeef;
+    bottom: calc(anchor(--skills bottom) + var(--arc-raise));
+}
+
+.arc-magenta {
+    --i: 1;
+    border-color: #ec008c;
+    bottom: calc(anchor(--proj bottom) + var(--arc-raise));
+}
+
+.arc-yellow {
+    --i: 2;
+    border-color: #fff200;
+    bottom: calc(anchor(--emp bottom) + var(--arc-raise));
+}
+
+.arc-black {
+    --i: 3;
+    border-color: #231f20;
+    bottom: calc(anchor(--edu bottom) + var(--arc-raise));
+}
+
+/* Browsers without CSS anchor positioning fall back to the CMYK.png banner. */
 .cymk {
-    height: 1050pt;
-    width: 20%;
-    margin-top: 10pt;
+    display: none;
 }
 
-.region-emp {
-    min-height: var(--emp-height);
-}
+@supports not (anchor-name: --a) {
+    #resume {
+        padding-left: 0;
+    }
 
-.region-tail {
-    min-height: var(--tail-height);
-}
+    .cmyk-arc {
+        display: none;
+    }
 
-/* Employment text size — drop --emp-font to compress Employment into its band. */
-#employment h3,
-#employment h4 {
-    font-size: var(--emp-font);
+    .cymk {
+        display: block;
+        height: 1050pt;
+        width: 20%;
+        margin-top: 10pt;
+    }
 }
 
 .david-title {
-    height: 100pt;
-    width: 75%;
+    height: auto;
+    width: 66%;
     margin-top: -10px;
 }
 
@@ -91,7 +149,7 @@ h4 {
 }
 
 #resume-body {
-    margin-right: 25%;
+    margin-right: 22%;
 }
 
 li, ul {

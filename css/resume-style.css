@@ -136,6 +136,12 @@ h4 {
     font-size: 16pt;
 }
 
+/* Din only has a light face, so <b> needs the real bold font to stand out. */
+b, strong {
+    font-family: Din-Bold;
+    font-weight: normal;
+}
+
 #about {
     margin-top: -25px;
     margin-left: 10px;

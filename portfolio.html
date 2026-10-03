@@ -42,6 +42,19 @@
             text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
         }
         
+        .trailer {
+            padding: 2rem 1rem;
+        }
+        
+        .trailer video {
+            display: block;
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            aspect-ratio: 16 / 9;
+            background-color: #000;
+        }
+        
         .game-info {
             max-width: 800px;
             margin: 3rem auto;
@@ -179,7 +192,16 @@
     <section class="banner">
         <img src="css\images\sunsethightitle.png" alt="Sunset High - School parking lot at sunset">
     </section>
-    
+
+    <!-- Steam Trailer -->
+    <section class="trailer">
+        <video controls preload="metadata" poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257156606/31721319931746f6eff164de5c80288fc0e76b1a/movie_600x337.jpg">
+            <source src="https://video.akamai.steamstatic.com/store_trailers/257156606/movie_max_vp9.webm" type="video/webm">
+            <source src="https://video.akamai.steamstatic.com/store_trailers/257156606/movie_max.mp4" type="video/mp4">
+            <a href="https://store.steampowered.com/app/2997880/Sunset_High/">Watch the Sunset High trailer on Steam</a>
+        </video>
+    </section>
+
     <!-- Game Info -->
     <section class="game-info">
         <p class="game-description">
